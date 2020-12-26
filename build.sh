@@ -13,7 +13,7 @@ function build_self_contained_dotnet() {
   fi
   echo "Building for self-contained executable for $1."
   pushd src/fsharp
-  dotnet publish -p:PublishSingleFile=true -p:PublishTrimmed=true -c Release --self-contained -r "$1"
+  dotnet publish -p:PublishSingleFile=true -p:IncludeAllContentForSelfExtract=true -p:PublishTrimmed=true -c Release --self-contained -r "$1"
   popd
 }
 
