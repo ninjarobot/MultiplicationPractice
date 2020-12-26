@@ -8,10 +8,23 @@ Run at a command line, optionally passing a single parameter for the maximum fac
 
 Press Ctrl+C on Linux or Windows or Cmd+C on macOS to exit.
 
-### Build
+### Build for dotnet
 Requires the dotnet 5 SDK.
 
 Build a self-contained executable, for example for Linux on x64:
 ```
- dotnet publish -p:PublishSingleFile=true -p:PublishTrimmed=true -c Release --self-contained -r linux-x64
+pushd src/fsharp
+dotnet publish -p:PublishSingleFile=true -p:PublishTrimmed=true -c Release --self-contained -r linux-x64
+popd
 ```
+
+### Build for Go
+Requires the Go 1.x SDK.
+
+Build a self-contained executable.
+```
+pushd src/go/multiplicationPractice
+go build
+popd
+```
+
